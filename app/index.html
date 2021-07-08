@@ -1,0 +1,48 @@
+<!--#set var="title" value="OptimizedHTML 5" -->
+<!--#include virtual="/parts/header.html" -->
+
+<section class="description-page">
+    <div class="content">
+
+        <div class="content-title">
+            <h1 class="h1">Калькулятор расчета возраста</h1>
+            <p class="description">
+                Онлайн калькулятор расчета возраста с даты вашего рождения. Обычно под словом «возраст» понимается календарный возраст (паспортный возраст, хронологический возраст)
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="calc-content">
+    <div class="content">
+        <div class="calc-age" id="agecalc">
+
+            <div class="calc-age__inputs" id="wrap_inputs">
+                <div class="calc-age__input-birth-date">
+                    <label for="birth-date">Дата рождения</label>
+                    <div class="input animate__animated">
+                        <input type="date" id="birth-date" value="1992-03-18">
+                    </div>
+                </div>
+                <div class="calc-age__input-currently-date">
+                    <label for="currently-date">Текущая дата</label>
+                    <div class="input animate__animated">
+                        <input type="date" id="currently-date">
+                    </div>
+                </div>
+                <div class="calc-age-inputs__buttons">
+                    <button class="button" id="create-date">Рассчитать</button>
+                    <button class="button button-empty" id="reset-calc" disabled="true">Сбросить</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+</section>
+
+
+
+<!--#include virtual="/parts/footer.html" -->

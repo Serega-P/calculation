@@ -1,0 +1,227 @@
+.home-header__top-line
+	width: 100%
+	height: 75px
+	background: $bgcolor
+	position: relative
+	border-bottom: 1px solid #D8DBE0
+
+.home-header__logo
+	height: 34px
+	width: auto
+	position: absolute
+	top: 50%
+	left: 30px
+	transform: translateY(-50%)
+
+.menu__burger
+	width: 75px
+	height: 75px
+	border-left: 1px solid #D8DBE0
+	position: absolute
+	top: 0
+	left: -75px
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	z-index: 102
+	&:hover
+		background: darken($bgcolor, 3%)
+	span
+		display: inline-block
+		width: 36px
+		height: 4px
+		border-radius: 11px
+		background: $accent
+		position: relative
+		text-align: right
+		padding: 0
+		margin: 0
+		&:after, &:before
+			content: ''
+			display: inline-block
+			height: 4px
+			border-radius: 11px
+			background: $accent
+			position: absolute
+			transition: transform .25s ease-out, top .2s ease-in
+		&:before
+			width: 18px
+			right: 0
+			top: 10px
+		&:after
+			width: 30px
+			top: -10px
+			right: 0
+	&.active
+		border: none
+		background: $darck
+		span
+			background: rgba(0,0,0, 0)
+			&:before, &:after
+				background: #fff
+				width: 36px
+				top: 0
+			&:before
+				transform: rotate(-45deg)
+			&:after
+				transform: rotate(45deg)
+		@include media-breakpoint-down(sm) 
+			left: 0px
+			z-index: 106
+			background: $darck
+
+.home-header__menu
+	position: absolute
+	top: 0
+	right: -360px
+	width: 360px
+	height: 100vh
+	background: #fff
+	z-index: 100
+	transition: right .5s cubic-bezier(.37,-0.3,.08,1.54)
+	&:after
+		content: ''
+		width: 100px
+		height: 100%
+		background: #ffffff
+		display: block
+		position: absolute
+		top: 0
+		right: -100px
+		z-index: 1000
+	@include media-breakpoint-down(sm)
+		transition: right .5s ease-out
+
+.home-header__menu.open
+	right: 0
+	@include media-breakpoint-down(sm)
+		width: 100vw
+
+#overlay
+	background: rgba(#152129, .5)
+	position: absolute
+	top: 0
+	z-index: 0
+	opacity: 0
+	visibility: hidden
+	transition: opacity .3s ease
+
+#overlay.active
+	visibility: visible
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 1
+	z-index: 101
+
+#overlay.hidenoverlay
+	visibility: visible
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	opacity: 0
+	z-index: 101
+
+.home-header__menu__nav
+	background: #fff
+	width: 100%
+	height: 100vh
+	z-index: 102
+	position: absolute
+	top: 0
+	right: 0
+	padding: 100px 30px 0
+	overflow: auto
+	ul
+		margin: 0
+		padding: 0
+		font-size: 0
+		li
+			list-style: none
+			margin: 0
+			padding: 0
+			min-height: 50px
+			line-height: 0
+			a
+				text-decoration: none
+				color: $textcolor
+				display: flex
+				align-items: center
+				width: 100%
+				height: 100%
+				min-height: 50px
+				padding: 0 20px
+				line-height: 0
+				font-size: 15px
+				&:hover
+					cursor: pointer
+					background: rgba(#D8DBE0, .2)
+
+
+.list-navbar
+	color: $textcolor
+	.item
+		height: 50px
+		border-bottom: 1px solid #D8DBE0
+		&:last-child
+			border-bottom: none
+		&.dropdown
+			display: inline-block
+			width: 100%
+			height: auto
+			border-bottom: none
+			a[data-toggle]
+				position: relative
+				display: flex
+				height: 100%
+				border-bottom: 1px solid #D8DBE0
+				&:last-child
+					border-bottom: none
+				&:after
+					content: ''
+					display: block
+					width: 13px
+					height: 13px
+					background-image: url(../images/dist/arrow.svg)
+					background-repeat: no-repeat
+					background-position: center
+					position: absolute
+					right: 20px
+					top: 50%
+					transform: translateY(-50%)
+					transition: transform .3s ease
+			.list-dropdown
+				overflow: hidden
+				display: inline-block
+				width: 100%
+				transition: max-height .6s ease
+				max-height: 0.01px
+				.item
+					line-height: 0
+					&:last-child
+						border-bottom: 1px solid #D8DBE0
+					a
+						padding-left: 40px
+					
+.item.dropdown.active
+	a[data-toggle]
+		&:after
+			transform: rotate(90deg) translateX(-50%)
+	.list-dropdown
+		max-height: 1000px
+		.item
+			&:last-child
+				border-bottom: 1px solid #D8DBE0
+
+
+.hiden
+	overflow: hidden
+	margin-right: calc(-1 * (100vw - 100%)
+
+
+	
